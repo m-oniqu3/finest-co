@@ -10,7 +10,6 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
- 
 }
 
 .details {
@@ -19,36 +18,36 @@
   margin: 0 auto;
 }
 
-h2, span {
+.details h2,
+span {
   font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-span{
-    color: #9F2C0F;;
+span {
+  color: #9f2c0f;
 }
 
-p {
+.details p {
   font-weight: 300;
   margin: 1rem 0;
   font-size: 1rem;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
-.icon{
-    width: 1.5rem;
-    margin-left: 1rem;
+figure.icon {
+  width: 1.5rem;
+  margin-left: 1rem;
 }
 
-@media (min-width:768px) {
-  h2,span{
+@media (min-width: 768px) {
+  h2,
+  span {
     font-size: 2.3rem;
   }
 
   .details {
     width: 70%;
   }
-  
- 
 }
