@@ -4,33 +4,27 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 figure {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 figure img {
     width: 20%;
 }
 
-.logo {
-    font-family: 'Jost',
-        sans-serif;
+.logo figcaption {
+    margin-left: .5rem; font-family: 'Jost', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     color: #9F2C0F;
-
-}
-
-.logo figcaption {
-    margin-left: .5rem;
 }
 
 ul.links {
     text-decoration: none;
-
 }
 
 .links>a {
@@ -41,6 +35,29 @@ ul.links {
     font-weight: 500;
 }
 
+.links > a:hover{
+color: black;
+}
+
 .icons {
     display: flex;
+}
+
+@media (min-width:768px) {
+    nav{
+        padding: .6rem 2rem;
+    }
+
+    figure img {
+        width: 50%;
+    }
+    
+    .logo figcaption {
+        font-size: 1.8rem;
+       
+    }
+
+    .links > a{
+        font-size: 1rem;
+    }
 }

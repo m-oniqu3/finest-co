@@ -11,6 +11,7 @@ const NavBar = () => {
         <figcaption>techstop</figcaption>
       </figure>
 
+      {/* links to the different components */}
       <ul className={styled.links}>
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
