@@ -6,52 +6,6 @@ header{
     /* height: 100vh;     */
 }
 
-nav{    
-    background-color: rgba(226, 220, 220, 0.43);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-figure{
-    display: flex;
-    align-items: flex-start;
-}
-
-figure img{
-    width:20%;
-}
-
-.logo{
-    font-family: 'Jost',
-    sans-serif;    
-    font-weight: 700;
-    font-size: 1.1rem;    
-    color: #9F2C0F;
-
-}
-
-.logo figcaption{
-    margin-left: .5rem;
-}
-
-ul.links{
-  text-decoration: none;
-
-}
-
-.links > a{
-    padding-left: .5rem;
-    text-decoration: none;
-    color:#BBB2A9 ;
-    font-size: .875rem;
-    font-weight: 500;
-}
-
-.icons{
-    display: flex;
-}
 
 .background {
     background-image: url("https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
