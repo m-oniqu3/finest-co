@@ -1,27 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap");
 
-header{
-    backdrop-filter: blur(30px);
-    position: relative;
-    height: 88vh;
-    overflow: hidden;
+header {
+  backdrop-filter: blur(30px);
+  position: relative;
+  height: 88vh;
+  overflow-y: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .background {
-    background-image: url("https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:center;
-    height: 100%;    
+  background-image: url("https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
 }
 
-@media (min-width:1052px) {
-    .background{
-        /* background-size: contain; */
-        width: 80vw;
-       margin-left: auto;
-    }
-    
+@media (min-width: 1052px) {
+  header {
+    height: 90vh;
+  }
+  .background {
+    /* background-size: contain; */
+    width: 80vw;
+    margin-left: auto;
+  }
 }
-
-

@@ -49,10 +49,7 @@ figure.product img {
     justify-content: center;
   }
 
-  figure.product img {
-    width: 70%;
-  }
-
+  figure.product img,
   .product-content {
     width: 70%;
     margin: 0 auto;
