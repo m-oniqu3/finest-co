@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap');
 
 header{
-    background-color: rgba(226, 220, 220, 0.43);
     backdrop-filter: blur(30px);
-    
+    position: relative;
+    /* height: 100vh;     */
 }
 
-nav{
+nav{    background-color: rgba(226, 220, 220, 0.43);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,4 +50,13 @@ ul.links{
 
 .icons{
     display: flex;
+}
+
+.background {
+    background-image: url("https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    height: 95vh;
+    
 }
