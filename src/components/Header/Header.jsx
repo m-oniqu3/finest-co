@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "./Header.module.css";
 import logo from "../../images/logo.png";
 import Container from "./Container";
+import { ShopIcon } from "../../icons/Icons";
 
 const Header = () => {
   return (
@@ -27,9 +28,14 @@ const Header = () => {
 
         <div className={styled.background}></div>
         <Container
-          title="extra-ordinary service made affordable"
+          title={
+            <h2>
+              <span>extra-ordinary</span> service made <span>affordable</span>
+            </h2>
+          }
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacus tellus egestas nullam et. Mauris tempor cras eget commodo ut nisl. "
-          buttonText="Shop Now"
+          buttonText={"Shop Now"}
+          icon={<ShopIcon />}
         />
       </header>
     </>

@@ -6,7 +6,8 @@ header{
     /* height: 100vh;     */
 }
 
-nav{    background-color: rgba(226, 220, 220, 0.43);
+nav{    
+    background-color: rgba(226, 220, 220, 0.43);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +16,7 @@ nav{    background-color: rgba(226, 220, 220, 0.43);
 
 figure{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
 }
 
 figure img{

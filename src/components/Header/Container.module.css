@@ -1,5 +1,39 @@
-.container{
-    position: relative;
-    bottom: 20px;
-    /* top: 10px */
+.container {
+  position: absolute;
+  bottom: 0px;
+  height: 45vh;
+  padding: 2rem 0;
+  border-radius: 0px 192.165px 0px 0px;
+  width: 90%;
+  background: rgba(155, 155, 155, 0.653);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+}
+
+.details {
+  /* margin-top: 3rem; */
+  width: 85%;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+h2, span {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+span{
+    color: #9F2C0F;;
+}
+p {
+  font-weight: 300;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.icon{
+    width: 1.5rem;
+    margin-left: 1rem;
 }
