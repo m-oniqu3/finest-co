@@ -3,3 +3,22 @@
   margin: 0 auto;
   padding: 2rem 0;
 }
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.sort {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort span {
+  width: 100%;
+  margin-left: 0.5rem;
+}
