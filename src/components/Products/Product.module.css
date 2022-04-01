@@ -1,0 +1,44 @@
+.card {
+  border-radius: 10px;
+  width: 300px;
+  margin-bottom: 8rem;
+  position: relative;
+  background: #f2f0f0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card-header img {
+  width: 80%;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  bottom: 70px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.card-body {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: -40px;
+}
+
+p.category {
+  padding: 0.5rem 1.5rem;
+  background-color: #9f2c0f;
+  color: white;
+  border-radius: 10px;
+  /* width: fit-content; */
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  text-transform: capitalize;
+  padding: 0.2rem 0;
+}

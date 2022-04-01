@@ -2,13 +2,13 @@ import styled from "./Shop.module.css";
 import ProductDetails from "../Products/ProductDetails";
 import { SortIcon } from "../../icons/Icons";
 import { useSelector } from "react-redux";
-import ProductList from "../Products/ProductList";
+import Product from "../Products/Product";
 
 const Shop = () => {
-  const { products, isLoading } = useSelector((state) => state.items);
+  const { products } = useSelector((state) => state.items);
 
   const productList = products.map((product) => (
-    <ProductList key={product.id} {...product} />
+    <Product key={product.id} {...product} />
   ));
 
   return (
@@ -28,7 +28,7 @@ const Shop = () => {
         </p>
       </article>
 
-      {productList}
+      <section className={styled.list}>{productList}</section>
     </section>
   );
 };
