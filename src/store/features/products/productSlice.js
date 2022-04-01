@@ -5,9 +5,10 @@ const initialState = {
   isLoading: false,
 };
 
-const url = "https://www.fakeshop-api.com/products";
+// const url = "https://fakestoreapi.com/products";
+const url = "https://course-api.com/react-store-products";
 
-const getProducts = createAsyncThunk("product/getProducts", async () => {
+export const getProducts = createAsyncThunk("product/getProducts", async () => {
   const response = await fetch(url);
   try {
     return await response.json();
@@ -15,12 +16,6 @@ const getProducts = createAsyncThunk("product/getProducts", async () => {
     return console.log(err);
   }
 });
-
-// export const getCartItems = createAsyncThunk("cart/getCartItems", () => {
-//   return fetch(url)
-//     .then((resp) => resp.json())
-//     .catch((err) => console.log(err));
-// });
 
 const productSlice = createSlice({
   name: "product",
@@ -31,7 +26,7 @@ const productSlice = createSlice({
       state.isLoading = true;
     },
     [getProducts.fulfilled]: (state, action) => {
-      console.log(action);
+      console.log(action.payload);
       state.isLoading = false;
       state.products = action.payload;
     },
@@ -40,5 +35,7 @@ const productSlice = createSlice({
     },
   },
 });
+
+console.log(productSlice.getInitialState);
 
 export default productSlice.reducer;
