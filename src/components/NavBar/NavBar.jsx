@@ -2,6 +2,7 @@ import React from "react";
 import styled from "./NavBar.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
+import { ShopIcon, WishlistIcon } from "../../icons/Icons";
 
 const NavBar = () => {
   return (
@@ -18,8 +19,8 @@ const NavBar = () => {
       </ul>
 
       <div className={styled.icons}>
-        <p>w</p>
-        <p>c</p>
+        <WishlistIcon />
+        <ShopIcon />
       </div>
     </nav>
   );
