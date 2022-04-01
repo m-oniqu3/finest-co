@@ -4,6 +4,7 @@ import ProductDetails from "../Products/ProductDetails";
 import { useSelector } from "react-redux";
 import Product from "../Products/Product";
 import Button from "../../ui/Button/Button";
+import SideNav from "./SideNav";
 
 const Shop = () => {
   const { products, isLoading } = useSelector((state) => state.items);
@@ -20,14 +21,18 @@ const Shop = () => {
       />
 
       <article className={styled.heading}>
-        <h3>Products</h3>
+        <h3>Filters</h3>
+        <div>
+          <h3>Products</h3>
 
-        <Button>Sort</Button>
+          <Button>Sort</Button>
+        </div>
       </article>
 
-      {!isLoading && products && (
+      <div className={styled["product-grid"]}>
+        <SideNav className={styled.side} />
         <section className={styled.list}>{productList}</section>
-      )}
+      </div>
     </section>
   );
 };
