@@ -1,11 +1,12 @@
 import styled from "./Shop.module.css";
 import ProductDetails from "../Products/ProductDetails";
-import { SortIcon } from "../../icons/Icons";
+// import { SortIcon } from "../../icons/Icons";
 import { useSelector } from "react-redux";
 import Product from "../Products/Product";
+import Button from "../../ui/Button/Button";
 
 const Shop = () => {
-  const { products } = useSelector((state) => state.items);
+  const { products, isLoading } = useSelector((state) => state.items);
 
   const productList = products.map((product) => (
     <Product key={product.id} {...product} />
@@ -20,15 +21,13 @@ const Shop = () => {
 
       <article className={styled.heading}>
         <h3>Products</h3>
-        <p className={styled.sort}>
-          Sort
-          <span>
-            <SortIcon />
-          </span>
-        </p>
+
+        <Button>Sort</Button>
       </article>
 
-      <section className={styled.list}>{productList}</section>
+      {!isLoading && products && (
+        <section className={styled.list}>{productList}</section>
+      )}
     </section>
   );
 };

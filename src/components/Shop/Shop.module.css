@@ -25,4 +25,12 @@
 
 .list {
   margin: 6rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
 }
