@@ -51,7 +51,7 @@
 
   .product-grid {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 6fr;
     gap: 1rem;
     justify-content: start;
     align-items: flex-start;
