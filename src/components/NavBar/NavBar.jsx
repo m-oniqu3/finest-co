@@ -9,7 +9,7 @@ const NavBar = () => {
     <nav>
       <figure className={styled.logo}>
         <img src={logo} alt="logo" />
-        <figcaption>techstop</figcaption>
+        <figcaption>finest&co</figcaption>
       </figure>
 
       {/* links to the different components */}

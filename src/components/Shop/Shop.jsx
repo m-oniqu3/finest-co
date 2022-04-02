@@ -16,8 +16,8 @@ const Shop = () => {
   return (
     <section className={styled["shop-container"]}>
       <ProductDetails
-        name="MateBook x pro"
-        content="With 3.1K Real Colour FullView Display, leading intelligent features and Super Device that connects seamlessly, HUAWEI MateBook X Pro takes your experience beyond the extraordinary."
+        name="New Arrival"
+        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consequuntur aspernatur quis rem blanditiis maxime molestiae eaque expedita, inventore consequatur!"
       />
 
       <article className={styled.heading}>

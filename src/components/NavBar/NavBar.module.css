@@ -4,19 +4,19 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  /* box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px; */
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
-figure {
+figure.logo {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-figure img {
+/* figure.logo img {
   width: 20%;
-}
+} */
 
 .logo figcaption {
   margin-left: 0.5rem;
@@ -24,6 +24,7 @@ figure img {
   font-weight: 700;
   font-size: 1.1rem;
   color: #9f2c0f;
+  width: 100%;
 }
 
 ul.links {
@@ -46,7 +47,7 @@ ul.links {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  width: 5%;
+  width: 3rem;
   color: #9f2c0f;
 }
 
@@ -55,7 +56,7 @@ ul.links {
     padding: 1rem 2rem;
   }
 
-  figure img {
+  figure.logo img {
     width: 50%;
   }
 
@@ -65,5 +66,9 @@ ul.links {
 
   .links > a {
     font-size: 1rem;
+  }
+
+  .icons {
+    width: 3.5rem;
   }
 }
