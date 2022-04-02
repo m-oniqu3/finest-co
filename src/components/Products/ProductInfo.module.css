@@ -11,7 +11,7 @@
   .details {
     align-items: flex-start;
     grid-template-columns: repeat(2, 1fr);
-    margin: 3rem auto;
+    margin: 5rem auto;
     gap: 2rem;
   }
 
