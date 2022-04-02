@@ -11,7 +11,9 @@ const ProductDetails = ({
   category,
   company,
   btn1,
+  btn1icon,
   btn2,
+  btn2icon,
 }) => {
   const nf = new Intl.NumberFormat("en-US");
 
@@ -28,13 +30,18 @@ const ProductDetails = ({
           <p>{company}</p>
         </div>
         <p>{content}</p>
-        {price && <p>$ {nf.format(Number(price))}</p>}
+        {price && <p className={styled.price}> $ {nf.format(price)}</p>}
 
         {/* only show buttons if btn props were recieved */}
         {(btn1 || btn2) && (
           <div className={styled.btngroup}>
-            <Button> {btn1}</Button>
-            <Button> {btn2}</Button>
+            <Button className={styled.btns}>
+              {btn1}
+              <figure className={styled.icon}> {btn1icon}</figure>
+            </Button>
+            <Button className={styled.btns}>
+              {btn2} <figure className={styled.icon}>{btn2icon}</figure>
+            </Button>
           </div>
         )}
       </article>

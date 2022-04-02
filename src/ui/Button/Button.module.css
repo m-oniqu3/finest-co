@@ -1,12 +1,12 @@
-.btn{
-background: #9F2C0F;
-box-shadow: 3.389px 3.389px 5px rgba(97, 77, 55, 0.25);
-border-radius: 8px;
-border: none;
-padding: 10px 25px;
-color: #E8E4E4;
-font-weight: 600;
-display: flex;
-align-items: center;
-justify-content: space-around;
+.btn {
+  background: #9f2c0f;
+  box-shadow: 3.389px 3.389px 5px rgba(97, 77, 55, 0.25);
+  border-radius: 8px;
+  border: none;
+  padding: 10px 25px;
+  color: #e8e4e4;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

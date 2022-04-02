@@ -29,31 +29,41 @@
 
 figure.product {
   padding: 2rem 0;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 figure.product img {
   width: 100%;
 }
 
+p.price {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
 .btngroup {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
+}
+
+figure.icon {
+  width: 1.5rem;
+  margin-left: 1rem;
 }
 
 @media (min-width: 768px) {
   .product-info {
     display: grid;
     grid-template-columns: 40% 60%;
-    gap: 1rem;
-    align-items: center;
+    gap: 3rem;
     justify-content: space-between;
   }
 
   figure.product {
     order: 1;
+    padding: 0;
   }
 
   article.product-content h1 {

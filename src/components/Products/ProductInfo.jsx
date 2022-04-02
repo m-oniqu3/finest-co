@@ -3,7 +3,7 @@ import styled from "./ProductInfo.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
-import { LeftArrowIcon } from "../../icons/Icons";
+import { LeftArrowIcon, ShopIcon, WishlistIcon } from "../../icons/Icons";
 
 const ProductInfo = () => {
   const navigate = useNavigate();
@@ -28,7 +28,9 @@ const ProductInfo = () => {
       imgSrc={image}
       content={description}
       btn1="Add to Wishlist"
+      btn1icon={<ShopIcon />}
       btn2="Add to Cart"
+      btn2icon={<WishlistIcon />}
     />
   );
 
