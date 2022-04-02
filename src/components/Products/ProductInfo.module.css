@@ -4,11 +4,12 @@
 }
 
 .details figure {
-  order: 0;
+  order: -1;
 }
 
 .back {
   width: 50%;
+  max-width: 150px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

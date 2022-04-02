@@ -4,7 +4,7 @@ import styled from "./Product.module.css";
 
 const Product = ({ id, name, price, image, category }) => {
   const navigate = useNavigate();
-
+  const nf = new Intl.NumberFormat("en-US");
   const getProductInfo = (id) => {
     navigate(`product/${id}`);
   };
@@ -18,7 +18,7 @@ const Product = ({ id, name, price, image, category }) => {
         <p className={styled.name}>
           <strong>{name}</strong>
         </p>
-        <p className={styled.price}>$ {price.toFixed(2)}</p>
+        <p className={styled.price}>$ {nf.format(price)}</p>
       </article>
     </section>
   );

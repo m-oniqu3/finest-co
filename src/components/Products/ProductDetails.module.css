@@ -36,6 +36,13 @@ figure.product img {
   width: 100%;
 }
 
+.btngroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 @media (min-width: 768px) {
   .product-info {
     display: grid;
