@@ -3,11 +3,14 @@ import styled from "./ProductInfo.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
+import { LeftArrowIcon } from "../../icons/Icons";
 
 const ProductInfo = () => {
+  const navigate = useNavigate();
+
   //destructured the id from the url
   const { productId } = useParams();
-  const navigate = useNavigate();
+
   const { products } = useSelector((state) => state.items);
 
   //find the product in the products array that matches the productId
@@ -29,7 +32,18 @@ const ProductInfo = () => {
     />
   );
 
-  return <section className={styled.productInfo}>{productInfo}</section>;
+  return (
+    <section className={styled.productInfo}>
+      <p className={styled.back} onClick={() => navigate(-1)}>
+        <span>
+          <LeftArrowIcon />
+        </span>
+        Back to Shop
+      </p>
+
+      {productInfo}
+    </section>
+  );
 };
 
 export default ProductInfo;

@@ -7,6 +7,19 @@
   order: 0;
 }
 
+.back {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #bbb2a9;
+  margin-top: 2rem;
+}
+
+.back span {
+  color: #bbb2a9;
+  width: 20%;
+}
 @media (min-width: 768px) {
   .details {
     align-items: flex-start;
