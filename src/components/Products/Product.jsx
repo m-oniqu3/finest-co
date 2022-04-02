@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "./Product.module.css";
 
-const Product = ({ name, price, image, category }) => {
+const Product = ({ id, name, price, image, category }) => {
+  const navigate = useNavigate();
+
+  const getProductInfo = (id) => {
+    navigate(`product/${id}`);
+  };
   return (
-    <section className={styled.card}>
+    <section className={styled.card} onClick={() => getProductInfo(id)}>
       <figure className={styled["card-header"]}>
         <img src={image} alt={name} />
       </figure>

@@ -7,7 +7,7 @@ import Button from "../../ui/Button/Button";
 import SideNav from "./SideNav";
 
 const Shop = () => {
-  const { products, isLoading } = useSelector((state) => state.items);
+  const { products } = useSelector((state) => state.items);
 
   const productList = products.map((product) => (
     <Product key={product.id} {...product} />
@@ -19,7 +19,6 @@ const Shop = () => {
         name="New Arrival"
         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consequuntur aspernatur quis rem blanditiis maxime molestiae eaque expedita, inventore consequatur!"
       />
-
       <article className={styled.heading}>
         <h3>Filters</h3>
         <div>
@@ -28,7 +27,6 @@ const Shop = () => {
           <Button>Sort</Button>
         </div>
       </article>
-
       <div className={styled["product-grid"]}>
         <SideNav className={styled.side} />
         <section className={styled.list}>{productList}</section>

@@ -7,6 +7,7 @@ import Shop from "./components/Shop/Shop";
 
 import { useDispatch } from "react-redux";
 import { getProducts } from "./store/features/products/productSlice";
+import ProductInfo from "./components/Products/ProductInfo";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Header />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="shop/product/:productId" exact element={<ProductInfo />} />
       </Routes>
     </div>
   );
