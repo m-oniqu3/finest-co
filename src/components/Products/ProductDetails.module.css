@@ -3,13 +3,28 @@
   font-size: 1.5rem;
   text-transform: capitalize;
   color: #9f2c0f;
-  text-align: center;
 }
 
 .product-content p {
-  text-align: center;
   padding-top: 1rem;
   font-weight: 300;
+}
+
+.product-content .filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filters p {
+  padding: 0.5rem 1.5rem;
+  background-color: #e8e4e4;
+  color: #9f2c0f;
+  border-radius: 10px;
+  width: fit-content;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 0.875rem;
+  margin: 0.6rem 0;
 }
 
 figure.product {

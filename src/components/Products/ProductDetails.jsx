@@ -1,18 +1,27 @@
 import React from "react";
 import styled from "./ProductDetails.module.css";
 
-const ProductDetails = ({ name, content, price }) => {
+const ProductDetails = ({
+  name,
+  content,
+  imgSrc,
+  price,
+  className,
+  category,
+  company,
+}) => {
   return (
-    <section className={styled["product-info"]}>
+    <section className={`${styled["product-info"]} ${className}`}>
       <figure className={styled["product"]}>
-        <img
-          src="https://images.unsplash.com/photo-1618221710640-c0eaaa2adb49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
-          alt={name}
-        />
+        <img src={imgSrc} alt={name} />
       </figure>
 
       <article className={styled["product-content"]}>
         <h1>{name}</h1>
+        <div className={styled.filters}>
+          <p>{category}</p>
+          <p>{company}</p>
+        </div>
         <p>{content}</p>
         <p>{price}</p>
       </article>

@@ -1,0 +1,34 @@
+.productInfo {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.details figure {
+  order: 0;
+}
+
+@media (min-width: 768px) {
+  .details {
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3rem auto;
+    gap: 2rem;
+  }
+
+  .details figure {
+    padding: 0;
+    height: 80%;
+  }
+
+  .details figure img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .details {
+    grid-template-columns: 40% 60%;
+  }
+}
