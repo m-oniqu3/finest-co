@@ -2,45 +2,38 @@ import React from "react";
 import Button from "../../ui/Button/Button";
 import styled from "./ProductDetails.module.css";
 
-const ProductDetails = ({
-  name,
-  content,
-  imgSrc,
-  price,
-  className,
-  category,
-  company,
-  btn1,
-  btn1icon,
-  btn2,
-  btn2icon,
-}) => {
+const ProductDetails = (props) => {
   const nf = new Intl.NumberFormat("en-US");
 
+  const addToCartHandler = () => {};
+
   return (
-    <section className={`${styled["product-info"]} ${className}`}>
+    <section className={`${styled["product-info"]} ${props.className}`}>
       <figure className={styled["product"]}>
-        <img src={imgSrc} alt={name} />
+        <img src={props.imgSrc} alt={props.name} />
       </figure>
 
       <article className={styled["product-content"]}>
-        <h1>{name}</h1>
+        <h1>{props.name}</h1>
         <div className={styled.filters}>
-          <p>{category}</p>
-          <p>{company}</p>
+          <p>{props.category}</p>
+          <p>{props.company}</p>
         </div>
-        <p>{content}</p>
-        {price && <p className={styled.price}> $ {nf.format(price)}</p>}
+        <p>{props.content}</p>
+        {props.price && (
+          <p className={styled.price}> $ {nf.format(props.price)}</p>
+        )}
 
         {/* only show buttons if btn props were recieved */}
-        {(btn1 || btn2) && (
+        {(props.btn1 || props.btn2) && (
           <div className={styled.btngroup}>
             <Button className={styled.btns}>
-              {btn1}
-              <figure className={styled.icon}> {btn1icon}</figure>
+              {props.btn1}
+              <figure className={styled.icon}> {props.btn1icon}</figure>
             </Button>
-            <Button className={styled.btns}>
-              {btn2} <figure className={styled.icon}>{btn2icon}</figure>
+            <Button onClickHandler={addToCartHandler} className={styled.btns}>
+              {props.btn2}{" "}
+              <figure className={styled.icon}>{props.btn2icon}</figure>
             </Button>
           </div>
         )}

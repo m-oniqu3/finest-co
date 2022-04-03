@@ -28,9 +28,9 @@ const ProductInfo = () => {
       imgSrc={image}
       content={description}
       btn1="Add to Wishlist"
-      btn1icon={<ShopIcon />}
+      btn1icon={<WishlistIcon />}
       btn2="Add to Cart"
-      btn2icon={<WishlistIcon />}
+      btn2icon={<ShopIcon />}
     />
   );
 

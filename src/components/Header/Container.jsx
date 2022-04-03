@@ -18,7 +18,7 @@ const Container = ({ title, content, buttonText, icon }) => {
         <p>{content}</p>
 
         {/* includes text and icon */}
-        <Button navigateTo={shopHandler}>
+        <Button onClickHandler={shopHandler}>
           {buttonText}
           <figure className={styled.icon}>{icon}</figure>
         </Button>
