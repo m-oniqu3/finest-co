@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "./NavBar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { ShopIcon, WishlistIcon } from "../../icons/Icons";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const cartHandler = () => {
+    navigate("cart");
+  };
   return (
     <nav>
       <figure className={styled.logo}>
@@ -20,7 +24,9 @@ const NavBar = () => {
 
       <div className={styled.icons}>
         <WishlistIcon />
-        <ShopIcon />
+        <div onClick={cartHandler}>
+          <ShopIcon />
+        </div>
       </div>
     </nav>
   );

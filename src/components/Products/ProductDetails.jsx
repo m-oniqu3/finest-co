@@ -1,11 +1,19 @@
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../store/features/cart/cartSlice";
 import Button from "../../ui/Button/Button";
 import styled from "./ProductDetails.module.css";
 
 const ProductDetails = (props) => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const nf = new Intl.NumberFormat("en-US");
+  const { id, name, price } = props;
 
-  const addToCartHandler = () => {};
+  const addToCartHandler = () => {
+    dispatch(addToCart({ id, name, price }));
+  };
+
+  console.log(cartItems);
 
   return (
     <section className={`${styled["product-info"]} ${props.className}`}>
@@ -32,7 +40,7 @@ const ProductDetails = (props) => {
               <figure className={styled.icon}> {props.btn1icon}</figure>
             </Button>
             <Button onClickHandler={addToCartHandler} className={styled.btns}>
-              {props.btn2}{" "}
+              {props.btn2}
               <figure className={styled.icon}>{props.btn2icon}</figure>
             </Button>
           </div>

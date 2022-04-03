@@ -14,13 +14,13 @@ const ProductInfo = () => {
   const { products } = useSelector((state) => state.items);
 
   //find the product in the products array that matches the productId
-  const { name, category, company, description, price, image } = products.find(
-    (product) => product.id === productId
-  );
+  const { id, name, category, company, description, price, image } =
+    products.find((product) => product.id === productId);
 
   const productInfo = (
     <ProductDetails
       className={styled.details}
+      id={id}
       name={name}
       category={category}
       company={company}

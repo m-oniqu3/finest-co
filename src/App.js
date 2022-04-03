@@ -5,17 +5,18 @@ import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Shop from "./components/Shop/Shop";
 
-import { useDispatch } from "react-redux";
-import { getProducts } from "./store/features/products/productSlice";
+// import { useDispatch } from "react-redux";
+// import { getProducts } from "./store/features/products/productSlice";
 import ProductInfo from "./components/Products/ProductInfo";
+import Cart from "./components/Cart/Cart";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  // dispatch action to fetch tha data
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+  // // dispatch action to fetch tha data
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, [dispatch]);
 
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" exact element={<Header />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="shop/product/:productId" exact element={<ProductInfo />} />
+        <Route path="/cart" exact element={<Cart />} />
       </Routes>
     </div>
   );
