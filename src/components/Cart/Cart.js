@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "./Cart.module.css";
 import { useSelector } from "react-redux";
+import { MinusIcon, PlusIcon } from "../../icons/Icons";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cartItems);
+  const nf = new Intl.NumberFormat("en-US");
   console.log(cart);
 
   const cartItems = cart.map((item) => {
@@ -13,18 +15,31 @@ const Cart = () => {
           <figure className={styled["cart-product"]}>
             <img src={item.image} alt={item.name} />
           </figure>
+
           <div className={styled.caption}>
             <figcaption>{item.name}</figcaption>
-            <p>{item.price}</p>
+            <p>$ {nf.format(item.price)}</p>
           </div>
 
-          <p className={styled.quantity}>{item.quantity}</p>
-          <p className={styled.productTotal}> {item.productTotal}</p>
+          <div className={styled["quantity-group"]}>
+            <p className={styled.quantity}>{item.quantity}</p>
+
+            <div className={styled.icons}>
+              <p>
+                <PlusIcon />
+              </p>
+              <p>
+                <MinusIcon />
+              </p>
+            </div>
+          </div>
+
+          <p className={styled.productTotal}>${nf.format(item.productTotal)}</p>
         </div>
       </section>
     );
   });
-  return <div>{cartItems}</div>;
+  return <section className={styled["cart-container"]}>{cartItems}</section>;
 };
 
 export default Cart;
