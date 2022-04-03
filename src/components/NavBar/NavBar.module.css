@@ -50,6 +50,9 @@ ul.links {
   width: 3rem;
   color: #9f2c0f;
 }
+.icons a {
+  color: inherit;
+}
 
 @media (min-width: 768px) {
   nav {
