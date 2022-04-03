@@ -7,10 +7,10 @@ const ProductDetails = (props) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const nf = new Intl.NumberFormat("en-US");
-  const { id, name, price } = props;
+  const { id, name, price, imgSrc } = props;
 
   const addToCartHandler = () => {
-    dispatch(addToCart({ id, name, price }));
+    dispatch(addToCart({ id, name, price, imgSrc }));
   };
 
   console.log(cartItems);

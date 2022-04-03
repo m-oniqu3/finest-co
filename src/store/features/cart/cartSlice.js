@@ -21,8 +21,8 @@ const cartSlice = createSlice({
           price: itemToAdd.price,
           quantity: 1,
           productTotal: itemToAdd.price,
+          image: itemToAdd.imgSrc,
         });
-        console.log(state.cartItems);
       } else {
         itemToAddExists.quantity += 1;
         itemToAddExists.productTotal += itemToAddExists.price;
