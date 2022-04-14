@@ -3,8 +3,11 @@ import styled from "./NavBar.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { ShopIcon, WishlistIcon } from "../../icons/Icons";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const { amountOfItemsInCart } = useSelector((state) => state.cart);
+
   return (
     <nav>
       <figure className={styled.logo}>
@@ -24,7 +27,7 @@ const NavBar = () => {
         </Link>
 
         <Link to="/cart">
-          <ShopIcon />
+          <ShopIcon /> {amountOfItemsInCart}
         </Link>
       </div>
     </nav>

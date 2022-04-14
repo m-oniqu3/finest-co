@@ -9,6 +9,7 @@ const Cart = () => {
   /**
    * map over each item in the cart array from the store and return a CartItem
    */
+
   const cartItems = cart.map((item) => {
     return <CartItem key={item.id} item={item} />;
   });

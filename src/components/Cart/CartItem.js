@@ -1,8 +1,16 @@
 import React from "react";
 import styled from "./CartItem.module.css";
 import { MinusIcon, PlusIcon } from "../../icons/Icons";
-// import { addToCart, increase } from "../../store/features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { increase } from "../../store/features/cart/cartSlice";
+
 function CartItem({ item }) {
+  const dispatch = useDispatch();
+
+  const increaseHandler = () => {
+    dispatch(increase(item));
+  };
+
   const nf = new Intl.NumberFormat("en-US");
   return (
     <section key={item.id} className={styled.card}>
@@ -20,7 +28,7 @@ function CartItem({ item }) {
           <p className={styled.quantity}>{item.quantity}</p>
 
           <div className={styled.icons}>
-            <div>
+            <div onClick={increaseHandler}>
               <PlusIcon />
             </div>
             <p>

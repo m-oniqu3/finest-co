@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -25,7 +25,7 @@ function App() {
         <Route path="/" exact element={<Header />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="shop/product/:productId" exact element={<ProductInfo />} />
-        <Route path="/cart" exact element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );

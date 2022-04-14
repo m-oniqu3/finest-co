@@ -22,6 +22,7 @@ const cartSlice = createSlice({
       const itemToAddExists = state.cartItems.find(
         (item) => item.id === itemToAdd.id
       );
+      state.amountOfItemsInCart = state.amountOfItemsInCart + 1;
       if (!itemToAddExists) {
         state.cartItems.push({
           id: itemToAdd.id,
@@ -37,8 +38,10 @@ const cartSlice = createSlice({
         itemToAddExists.productTotal += itemToAddExists.price;
       }
     },
-    increase: (state, { payload }) => {
-      const cartItem = state.cartItems.find((item) => item.id === payload.id);
+    increase: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload.id
+      );
       cartItem.quantity = cartItem.quantity + 1;
     },
     removeFromCart: () => {},
