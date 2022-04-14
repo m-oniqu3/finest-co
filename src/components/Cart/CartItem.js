@@ -2,13 +2,17 @@ import React from "react";
 import styled from "./CartItem.module.css";
 import { MinusIcon, PlusIcon } from "../../icons/Icons";
 import { useDispatch } from "react-redux";
-import { increase } from "../../store/features/cart/cartSlice";
+import { decrease, increase } from "../../store/features/cart/cartSlice";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
 
   const increaseHandler = () => {
     dispatch(increase(item));
+  };
+
+  const decreaseHandler = () => {
+    dispatch(decrease(item));
   };
 
   const nf = new Intl.NumberFormat("en-US");
@@ -31,9 +35,9 @@ function CartItem({ item }) {
             <div onClick={increaseHandler}>
               <PlusIcon />
             </div>
-            <p>
+            <div onClick={decreaseHandler}>
               <MinusIcon />
-            </p>
+            </div>
           </div>
         </div>
 

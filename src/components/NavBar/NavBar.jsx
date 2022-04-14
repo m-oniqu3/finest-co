@@ -27,7 +27,10 @@ const NavBar = () => {
         </Link>
 
         <Link to="/cart">
-          <ShopIcon /> {amountOfItemsInCart}
+          <ShopIcon />
+          {amountOfItemsInCart !== 0 && (
+            <p className={styled.amount}>{amountOfItemsInCart}</p>
+          )}
         </Link>
       </div>
     </nav>
