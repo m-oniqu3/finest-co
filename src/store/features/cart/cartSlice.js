@@ -23,14 +23,20 @@ const cartSlice = createSlice({
           productTotal: itemToAdd.price,
           image: itemToAdd.imgSrc,
         });
-      } else {
-        itemToAddExists.quantity += 1;
-        itemToAddExists.productTotal += itemToAddExists.price;
+        console.log(state);
       }
+      // } else {
+      //   itemToAddExists.quantity++;
+      //   itemToAddExists.productTotal += itemToAddExists.price;
+      // }
+    },
+    increase: (state, { payload }) => {
+      const cartItem = state.cartItems.find((item) => item.id === payload.id);
+      cartItem.quantity = cartItem.quantity + 1;
     },
     removeFromCart: () => {},
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { increase, addToCart } = cartSlice.actions;
 export default cartSlice.reducer;
