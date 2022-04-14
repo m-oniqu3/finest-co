@@ -55,19 +55,7 @@
   /* max-width: 50px; */
 }
 
-.cart-container {
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
 .icons {
   width: 1.5rem;
   color: #bbb2a9;
-}
-
-.h4 {
-  color: #bbb2a9;
-  text-align: center;
-  padding-bottom: 1rem;
 }

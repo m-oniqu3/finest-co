@@ -5,15 +5,20 @@ import styled from "./ProductDetails.module.css";
 
 const ProductDetails = (props) => {
   const dispatch = useDispatch();
+
+  //get the cartItems from the store
   const cartItems = useSelector((state) => state.cart.cartItems);
+
+  //formats a number
   const nf = new Intl.NumberFormat("en-US");
+
+  //destructured from the props object
   const { id, name, price, imgSrc } = props;
 
   const addToCartHandler = () => {
     dispatch(addToCart({ id, name, price, imgSrc }));
+    console.log(cartItems);
   };
-
-  console.log(cartItems);
 
   return (
     <section className={`${styled["product-info"]} ${props.className}`}>
@@ -39,6 +44,7 @@ const ProductDetails = (props) => {
               {props.btn1}
               <figure className={styled.icon}> {props.btn1icon}</figure>
             </Button>
+
             <Button onClickHandler={addToCartHandler} className={styled.btns}>
               {props.btn2}
               <figure className={styled.icon}>{props.btn2icon}</figure>

@@ -5,6 +5,14 @@ const initialState = {
   amountOfItemsInCart: 0,
   cartTotal: 0,
 };
+
+/** addToCart
+ * stores the payload in a constant itemToAdd
+ * checks if the itemToAdd exists in the cartItems array in the store
+ * if the itemToAdd does not exist then add its content to a new object then push it to cartItems array
+ * if the item does exist then increase its quantity and total price
+ */
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -24,11 +32,10 @@ const cartSlice = createSlice({
           image: itemToAdd.imgSrc,
         });
         console.log(state);
+      } else {
+        itemToAddExists.quantity++;
+        itemToAddExists.productTotal += itemToAddExists.price;
       }
-      // } else {
-      //   itemToAddExists.quantity++;
-      //   itemToAddExists.productTotal += itemToAddExists.price;
-      // }
     },
     increase: (state, { payload }) => {
       const cartItem = state.cartItems.find((item) => item.id === payload.id);
