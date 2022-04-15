@@ -26,6 +26,12 @@ const initialState = {
  * decreases the cartItem's quantity and its total
  * if the quantity is less than 1, remove the item from the cart
  */
+
+/** calculateTotal
+ * calculates the overall total of the cart
+ * loops through the cartItems and adds each item productTotal
+ */
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -36,6 +42,7 @@ const cartSlice = createSlice({
         (item) => item.id === itemToAdd.id
       );
       state.amountOfItemsInCart++;
+
       if (!itemToAddExists) {
         state.cartItems.push({
           id: itemToAdd.id,
@@ -51,6 +58,7 @@ const cartSlice = createSlice({
         itemToAddExists.productTotal += itemToAddExists.price;
       }
     },
+
     increase: (state, action) => {
       state.amountOfItemsInCart++;
       const cartItem = state.cartItems.find(
@@ -64,6 +72,7 @@ const cartSlice = createSlice({
       const cartItem = state.cartItems.find(
         (item) => item.id === action.payload.id
       );
+
       state.amountOfItemsInCart--;
       if (cartItem.quantity === 1) {
         state.cartItems = state.cartItems.filter(
@@ -74,8 +83,15 @@ const cartSlice = createSlice({
         cartItem.productTotal -= cartItem.price;
       }
     },
+
+    calculateTotal: (state) => {
+      let total = 0;
+      state.cartItems.forEach((item) => (total += item.productTotal));
+      state.cartTotal = total;
+    },
   },
 });
 
-export const { increase, addToCart, decrease } = cartSlice.actions;
+export const { increase, addToCart, decrease, calculateTotal } =
+  cartSlice.actions;
 export default cartSlice.reducer;

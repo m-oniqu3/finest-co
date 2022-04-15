@@ -9,3 +9,33 @@
   text-align: center;
   padding-bottom: 1rem;
 }
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #bbb2a9;
+  margin-top: 2rem;
+}
+
+.total span {
+  color: #9f2c0f;
+  font-weight: 700;
+  padding-left: 5px;
+}
+
+.back {
+  width: 50%;
+  max-width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #bbb2a9;
+
+  cursor: pointer;
+}
+
+.back span {
+  color: #bbb2a9;
+  width: 20%;
+}
