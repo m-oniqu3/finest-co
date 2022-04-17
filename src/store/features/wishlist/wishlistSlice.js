@@ -3,7 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   wishListItems: [],
   amountOfItemsInWishList: 0,
-  message: "",
+  itemIsInList: false,
+  feedback: {
+    image: "",
+    message: "",
+  },
 };
 
 const wishlistSlice = createSlice({
@@ -11,11 +15,15 @@ const wishlistSlice = createSlice({
   initialState,
   reducers: {
     addToWishList: (state, action) => {
+      //stores the payload in a constant
       const itemToAdd = action.payload;
+
+      //checks if the payload is already in the  wishListItems array
       const itemToAddExists = state.wishListItems.find(
         (item) => item.id === itemToAdd.id
       );
 
+      //if payload does not exist then create a new object with its values
       if (!itemToAddExists) {
         state.wishListItems.push({
           id: itemToAdd.id,
@@ -23,19 +31,41 @@ const wishlistSlice = createSlice({
           price: itemToAdd.price,
           image: itemToAdd.imgSrc,
         });
-        state.message = "item added";
+
+        //Update the feedback and increase the amount of items in the wishlist
+        state.feedback.message = "Item added";
+        state.feedback.image = itemToAdd.imgSrc;
         state.amountOfItemsInWishList++;
+        // state.itemIsInList = state.wishListItems.includes(itemToAdd);
       }
       if (itemToAddExists) {
-        state.message = "item removed";
+        //Update the feedback and increase the amount of items in the wishlist
+        state.message = "Item removed";
+        state.amountOfItemsInWishList--;
+        // state.itemIsInList = state.wishListItems.includes(itemToAddExists);
+
+        //remove the selected item from the array
         state.wishListItems = state.wishListItems.filter(
           (item) => item.id !== itemToAddExists.id
         );
-        state.amountOfItemsInWishList--;
       }
+    },
+
+    /**checks if the current item is already in the wishlist
+     * returns boolean
+     */
+    checkIfItemIsInWishList: (state, action) => {
+      const item = state.wishListItems.find(
+        (item) => item.id === action.payload
+      );
+      state.itemIsInList = state.wishListItems.includes(item);
     },
   },
 });
 
-export const { addToWishList, removeItemFromWishList } = wishlistSlice.actions;
+export const {
+  addToWishList,
+  removeItemFromWishList,
+  checkIfItemIsInWishList,
+} = wishlistSlice.actions;
 export default wishlistSlice.reducer;
