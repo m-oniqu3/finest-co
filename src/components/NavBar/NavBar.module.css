@@ -49,6 +49,7 @@ ul.links {
   gap: 0.5rem;
   width: 15%;
   color: #9f2c0f;
+  max-width: 3.5rem;
 }
 .icons a {
   color: inherit;
@@ -62,7 +63,7 @@ p.amount {
   top: -10px;
   right: -8px;
   font-weight: 600;
-  color: #9f2c0f;
+  color: #bbb2a9;
   font-size: 12px;
 }
 

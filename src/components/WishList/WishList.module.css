@@ -1,3 +1,23 @@
+.items {
+  position: relative;
+}
+
+.wishbtns {
+  position: relative;
+  top: -130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wishbtns .icon {
+  width: 12%;
+  max-width: 3.5rem;
+  color: #bbb2a9;
+}
+
 .wishlist-wrapper {
   width: 85%;
   margin: 2rem auto;
@@ -15,5 +35,5 @@
 .h4 {
   color: #bbb2a9;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
