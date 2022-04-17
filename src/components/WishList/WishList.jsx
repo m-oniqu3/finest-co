@@ -2,12 +2,17 @@ import React from "react";
 import styled from "./WishList.module.css";
 import Product from "../Products/Product";
 import { useDispatch, useSelector } from "react-redux";
-import { ShopIcon, SolidWishListIcon } from "../../icons/Icons";
+import { LeftArrowIcon, ShopIcon, SolidWishListIcon } from "../../icons/Icons";
 import { addToWishList } from "../../store/features/wishlist/wishlistSlice";
+import { addToCart } from "../../store/features/cart/cartSlice";
+import Empty from "../../ui/Empty";
+import { useNavigate } from "react-router-dom";
 
 const WishList = () => {
   //dispatch function
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   //get the wishlist items from the store
   const { wishListItems } = useSelector((state) => state.wishList);
@@ -16,6 +21,11 @@ const WishList = () => {
    * since the item is already in the list it will be removed when checked by the action
    */
   const wishListHandler = (item) => {
+    dispatch(addToWishList(item));
+  };
+
+  const cartHandler = (item) => {
+    dispatch(addToCart(item));
     dispatch(addToWishList(item));
   };
 
@@ -29,7 +39,7 @@ const WishList = () => {
           <SolidWishListIcon />
         </div>
 
-        <div className={styled.icon}>
+        <div className={styled.icon} onClick={() => cartHandler(item)}>
           <ShopIcon />
         </div>
       </div>
@@ -40,8 +50,15 @@ const WishList = () => {
     <section className={styled["wishlist-wrapper"]}>
       <h4 className={styled.h4}>
         Your WishList
-        {wishListItems.length === 0 && <> is empty. </>}
+        {wishListItems.length === 0 && <> is empty.</>}
       </h4>
+      <p className={styled.back} onClick={() => navigate(-1)}>
+        <span>
+          <LeftArrowIcon />
+        </span>
+        Back
+      </p>
+      {wishListItems.length === 0 && <Empty />}
       <section className={styled.wishlist}>{wishList}</section>
     </section>
   );

@@ -35,5 +35,21 @@
 .h4 {
   color: #bbb2a9;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.back {
+  width: 50%;
+  max-width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #bbb2a9;
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+.back span {
+  color: #bbb2a9;
+  width: 20%;
 }

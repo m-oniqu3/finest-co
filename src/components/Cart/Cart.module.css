@@ -24,6 +24,7 @@
   color: #9f2c0f;
   font-weight: 700;
   padding-left: 5px;
+  font-size: 1rem;
 }
 
 .back {
@@ -33,7 +34,6 @@
   justify-content: space-evenly;
   align-items: center;
   color: #bbb2a9;
-
   cursor: pointer;
 }
 

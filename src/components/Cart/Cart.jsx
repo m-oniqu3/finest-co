@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { calculateTotal } from "../../store/features/cart/cartSlice";
 import { LeftArrowIcon } from "../../icons/Icons";
 import { useNavigate } from "react-router-dom";
+import Empty from "../../ui/Empty";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -26,23 +27,26 @@ const Cart = () => {
 
   return (
     <section className={styled["cart-container"]}>
-      <h4 className={styled.h4}>Your Shopping Cart</h4>
-
-      {/* only show cart if the there are cartItems */}
-      {cartItems.length !== 0 ? cart : <h4 className={styled.h4}>is empty</h4>}
+      <h4 className={styled.h4}>
+        Your Shopping Cart
+        {cartItems.length === 0 && <> is empty.</>}
+      </h4>
+      {cartItems.length === 0 && <Empty />}
 
       <div className={styled.total}>
         <p className={styled.back} onClick={() => navigate(-1)}>
           <span>
             <LeftArrowIcon />
           </span>
-          Back to Shop
+          Back
         </p>
 
         <div>
           Total <span> ${nf.format(cartTotal)}</span>
         </div>
       </div>
+
+      {cart}
     </section>
   );
 };
