@@ -22,7 +22,7 @@ const NavBar = () => {
       </ul>
 
       <div className={styled.icons}>
-        <Link to="/cart">
+        <Link to="/wishlist">
           <WishlistIcon />
         </Link>
 

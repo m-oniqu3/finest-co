@@ -2,9 +2,10 @@
   background: #f3f1f1;
   border-radius: 8px;
   padding: 1rem 0.5rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  max-width: 700px;
 }
 
 .cart-content {
@@ -18,7 +19,6 @@
 }
 
 .caption figcaption {
-  /* padding-bottom: 2px; */
   text-transform: capitalize;
   font-weight: 700;
   color: #9f2c0f;
@@ -33,7 +33,6 @@
 
 .quantity {
   width: 6%;
-  /* margin: 0 auto; */
 }
 
 .productTotal {
@@ -51,11 +50,16 @@
   height: 100%;
   object-fit: fill;
   max-height: 35px;
-
-  /* max-width: 50px; */
+  max-width: 60px;
 }
 
 .icons {
   width: 1.5rem;
   color: #bbb2a9;
+}
+
+@media (min-width: 768px) {
+  .cart-content {
+    padding: 0.5rem 1rem;
+  }
 }

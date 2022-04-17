@@ -9,6 +9,7 @@ import Shop from "./components/Shop/Shop";
 // import { getProducts } from "./store/features/products/productSlice";
 import ProductInfo from "./components/Products/ProductInfo";
 import Cart from "./components/Cart/Cart";
+import WishList from "./components/WishList/WishList";
 
 function App() {
   // const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="shop/product/:productId" exact element={<ProductInfo />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<WishList />} />
       </Routes>
     </div>
   );

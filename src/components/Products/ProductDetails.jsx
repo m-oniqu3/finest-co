@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/features/cart/cartSlice";
 import Button from "../../ui/Button/Button";
 import styled from "./ProductDetails.module.css";
 
 const ProductDetails = (props) => {
+  const [isInWishList, setIsInWishList] = useState(false);
+
   const dispatch = useDispatch();
 
   //get the cartItems from the store
@@ -14,6 +17,10 @@ const ProductDetails = (props) => {
 
   //destructured from the props object
   const { id, name, price, imgSrc } = props;
+
+  const wishListHandler = () => {
+    setIsInWishList(!isInWishList);
+  };
 
   const addToCartHandler = () => {
     dispatch(addToCart({ id, name, price, imgSrc }));
@@ -40,8 +47,9 @@ const ProductDetails = (props) => {
         {/* only show buttons if btn props were recieved */}
         {(props.btn1 || props.btn2) && (
           <div className={styled.btngroup}>
-            <Button className={styled.btns}>
-              {props.btn1}
+            <Button className={styled.btns} onClickHandler={wishListHandler}>
+              {!isInWishList ? props.btn1 : props.btn1alt}
+
               <figure className={styled.icon}> {props.btn1icon}</figure>
             </Button>
 

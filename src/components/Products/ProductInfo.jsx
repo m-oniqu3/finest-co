@@ -11,12 +11,14 @@ const ProductInfo = () => {
   //destructured the id from the url
   const { productId } = useParams();
 
+  //get all the products from the store
   const { products } = useSelector((state) => state.items);
 
   //find the product in the products array that matches the productId
   const { id, name, category, company, description, price, image } =
     products.find((product) => product.id === productId);
 
+  //return the details for each of the products
   const productInfo = (
     <ProductDetails
       className={styled.details}
@@ -28,6 +30,7 @@ const ProductInfo = () => {
       imgSrc={image}
       content={description}
       btn1="Add to Wishlist"
+      btn1alt="Remove from WishList"
       btn1icon={<WishlistIcon />}
       btn2="Add to Cart"
       btn2icon={<ShopIcon />}

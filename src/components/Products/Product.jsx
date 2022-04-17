@@ -5,9 +5,14 @@ import styled from "./Product.module.css";
 const Product = ({ id, name, price, image, category }) => {
   const navigate = useNavigate();
   const nf = new Intl.NumberFormat("en-US");
+
+  // navigates to the productInfo page for the given item
   const getProductInfo = (id) => {
     navigate(`product/${id}`);
   };
+
+  //returns all the products with their image, category and price
+  //displayed on the shop page
   return (
     <section className={styled.card} onClick={() => getProductInfo(id)}>
       <figure className={styled["card-header"]}>
