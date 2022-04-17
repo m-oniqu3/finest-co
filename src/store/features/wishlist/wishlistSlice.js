@@ -30,6 +30,7 @@ const wishlistSlice = createSlice({
           name: itemToAdd.name,
           price: itemToAdd.price,
           image: itemToAdd.imgSrc,
+          category: itemToAdd.category,
         });
 
         //Update the feedback and increase the amount of items in the wishlist

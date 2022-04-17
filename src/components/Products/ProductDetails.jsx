@@ -20,11 +20,11 @@ const ProductDetails = (props) => {
   const nf = new Intl.NumberFormat("en-US");
 
   //destructured from the props object
-  const { id, name, price, imgSrc } = props;
+  const { id, name, price, imgSrc, category } = props;
 
   //dispatches the action to add the current item to the store
   const wishListHandler = () => {
-    dispatch(addToWishList({ id, name, price, imgSrc }));
+    dispatch(addToWishList({ id, name, price, imgSrc, category }));
   };
 
   //dispatch the action to add the current item to the cart

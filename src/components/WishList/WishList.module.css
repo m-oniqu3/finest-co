@@ -1,0 +1,19 @@
+.wishlist-wrapper {
+  width: 85%;
+  margin: 2rem auto;
+}
+
+.wishlist {
+  margin: 4.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.h4 {
+  color: #bbb2a9;
+  text-align: center;
+  padding-bottom: 1rem;
+}
