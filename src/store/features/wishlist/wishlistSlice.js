@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   wishListItems: [],
   amountOfItemsInWishList: 0,
+  message: "",
 };
 
 const wishlistSlice = createSlice({
@@ -14,7 +15,6 @@ const wishlistSlice = createSlice({
       const itemToAddExists = state.wishListItems.find(
         (item) => item.id === itemToAdd.id
       );
-      state.amountOfItemsInWishList++;
 
       if (!itemToAddExists) {
         state.wishListItems.push({
@@ -23,21 +23,16 @@ const wishlistSlice = createSlice({
           price: itemToAdd.price,
           image: itemToAdd.imgSrc,
         });
-        console.log(state.wishListItems);
-      } else {
-        console.log("item already in cart");
+        state.message = "item added";
+        state.amountOfItemsInWishList++;
       }
-    },
-
-    removeItemFromWishList: (state, action) => {
-      const wishItem = state.wishListItems.find(
-        (item) => item.id === action.payload.id
-      );
-      state.amountOfItemsInWishList--;
-
-      wishItem && state.wishListItems.filter((item) => item.id !== wishItem.id);
-
-      console.log(state);
+      if (itemToAddExists) {
+        state.message = "item removed";
+        state.wishListItems = state.wishListItems.filter(
+          (item) => item.id !== itemToAddExists.id
+        );
+        state.amountOfItemsInWishList--;
+      }
     },
   },
 });
