@@ -17,7 +17,13 @@ const wishlistSlice = createSlice({
       state.amountOfItemsInWishList++;
 
       if (!itemToAddExists) {
-        state.wishListItems.push({ ...itemToAdd });
+        state.wishListItems.push({
+          id: itemToAdd.id,
+          name: itemToAdd.name,
+          price: itemToAdd.price,
+          image: itemToAdd.imgSrc,
+        });
+        console.log(state.wishListItems);
       } else {
         console.log("item already in cart");
       }
@@ -28,7 +34,10 @@ const wishlistSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       state.amountOfItemsInWishList--;
-      state.wishListItems.filter((item) => item.id !== wishItem.id);
+
+      wishItem && state.wishListItems.filter((item) => item.id !== wishItem.id);
+
+      console.log(state);
     },
   },
 });

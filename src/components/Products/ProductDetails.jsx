@@ -1,26 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/features/cart/cartSlice";
+import {
+  addToWishList,
+  removeItemFromWishList,
+} from "../../store/features/wishlist/wishlistSlice";
 import Button from "../../ui/Button/Button";
 import styled from "./ProductDetails.module.css";
 
 const ProductDetails = (props) => {
-  const [isInWishList, setIsInWishList] = useState(false);
+  //destructured from the props object
+  const { id, name, price, imgSrc } = props;
 
   const dispatch = useDispatch();
 
+  const [isInWishList, setIsInWishList] = useState(false);
+
   //get the cartItems from the store
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const wishListItems = useSelector((state) => state.wishList.wishListItems);
 
   //formats a number
   const nf = new Intl.NumberFormat("en-US");
 
-  //destructured from the props object
-  const { id, name, price, imgSrc } = props;
-
+  //sets the state to either true/false
   const wishListHandler = () => {
-    setIsInWishList(!isInWishList);
+    setIsInWishList((prevState) => !prevState);
   };
+
+  //if the state is true , then add the item to the wishlist
+  useEffect(() => {
+    isInWishList && dispatch(addToWishList({ id, name, price, imgSrc }));
+  }, [isInWishList, dispatch, id, name, price, imgSrc]);
+
+  //if the wishListItems array is not empty then and the state is false then remove the item from the wishlist
+  useEffect(() => {
+    wishListItems.length !== 0 &&
+      !isInWishList &&
+      dispatch(removeItemFromWishList({ id }));
+  }, [wishListItems.length, dispatch, id, isInWishList]);
 
   const addToCartHandler = () => {
     dispatch(addToCart({ id, name, price, imgSrc }));
@@ -48,8 +66,7 @@ const ProductDetails = (props) => {
         {(props.btn1 || props.btn2) && (
           <div className={styled.btngroup}>
             <Button className={styled.btns} onClickHandler={wishListHandler}>
-              {!isInWishList ? props.btn1 : props.btn1alt}
-
+              {props.btn1}
               <figure className={styled.icon}> {props.btn1icon}</figure>
             </Button>
 
