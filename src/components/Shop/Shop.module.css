@@ -5,12 +5,10 @@
 }
 
 .heading {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 0;
-  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .heading div {
@@ -54,6 +52,17 @@
     grid-template-columns: 1fr 6fr;
     gap: 1rem;
     justify-content: start;
+    align-items: flex-start;
+    margin-top: 5rem;
+  }
+
+  .list {
+    justify-content: space-around;
+  }
+
+  .heading {
+    padding: 0;
+    padding-bottom: 2rem;
     align-items: flex-start;
   }
 }

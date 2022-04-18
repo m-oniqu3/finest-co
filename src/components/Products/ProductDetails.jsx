@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/features/cart/cartSlice";
 import {
@@ -6,11 +6,13 @@ import {
   checkIfItemIsInWishList,
 } from "../../store/features/wishlist/wishlistSlice";
 import Button from "../../ui/Button/Button";
+// import Feedback from "../../ui/Feedback/Feedback";
 import styled from "./ProductDetails.module.css";
 
 const ProductDetails = (props) => {
+  // const [itemAdded, setItemAdded] = useState(false);
   //gets the itemIsInList and wishListItems properties from the store
-  const { itemIsInList, wishListItems } = useSelector(
+  const { itemIsInList, wishListItems, feedback } = useSelector(
     (state) => state.wishList
   );
 
@@ -22,15 +24,17 @@ const ProductDetails = (props) => {
   //destructured from the props object
   const { id, name, price, imgSrc, category } = props;
 
-  //dispatches the action to add the current item to the store
+  //dispatches the action to add the current item to the wishlist items array
   const wishListHandler = () => {
     dispatch(addToWishList({ id, name, price, imgSrc, category }));
+    // setItemAdded(true);
   };
 
   //dispatch the action to add the current item to the cart
   const addToCartHandler = () => {
     dispatch(addToCart({ id, name, price, imgSrc }));
   };
+
   //checks if the current item is in the cart every time changes are made to the wishList
   useEffect(() => {
     dispatch(checkIfItemIsInWishList(id));
@@ -68,6 +72,7 @@ const ProductDetails = (props) => {
             </Button>
           </div>
         )}
+        {/* {itemAdded && <Feedback message={feedback.message} />} */}
       </article>
     </section>
   );
